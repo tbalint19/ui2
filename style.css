@@ -1,0 +1,59 @@
+:root {
+  --small-w: 20px;
+  --small-h: 20px;
+  --big-w: 100px;
+  --big-h: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div {
+  flex-basis: 33.3333333%;
+}
+
+p {
+  width: var(--small-w);
+  height: var(--small-h);
+  background-color: red;
+}
+
+div:first-child, div:last-child {
+  flex-basis: 100%;
+}
+
+div:first-child {
+  padding-bottom: calc((100vh - var(--small-h) - var(--small-h) - var(--big-h)) / 2);
+}
+
+div:last-child {
+  padding-top: calc((100vh - var(--small-h) - var(--small-h) - var(--big-h)) / 2);
+}
+
+div:first-child p, div:last-child p {
+  margin: auto;
+}
+
+div:nth-child(2) p {
+  margin-right: auto;
+  margin-top: calc((var(--big-h) - var(--small-h)) / 2)
+}
+
+div:nth-child(3) p {
+  margin: auto;
+  height: var(--big-h);
+  width: var(--big-w);
+}
+
+div:nth-child(4) p {
+  margin-left: auto;
+  margin-top: calc((var(--big-h) - var(--small-h)) / 2)
+}
